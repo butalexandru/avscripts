@@ -15,7 +15,8 @@
 ###########################################
 
 # Initialize variables
-echo "Usage add_vm.sh <WM file path> <WM scale> <WM position: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast"
+# TODO: implement getopts
+echo "Usage avscr-watermark <WM file path> <WM scale> <WM position: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast"
 
 WM=$1		 # This is the path to your watermark image
 SCALE=$2         # This sets the scale % of your watermark image
