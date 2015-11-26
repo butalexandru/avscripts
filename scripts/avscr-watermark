@@ -21,11 +21,11 @@ echo "Usage avscr-watermark <WM file path> <WM scale> <WM position: NorthWest, N
 WM=$1		 # This is the path to your watermark image
 SCALE=$2         # This sets the scale % of your watermark image
 
+mkdir watermarked
 # Find all image files in current directory and watermark.
 file -i * | grep image | awk -F':' '{ print $1 }' | while read IMAGE
         do
                 echo Watermarking $IMAGE
-                mkdir watermarked
                 composite -dissolve 100% -gravity $3 -geometry +50+50 -quality 100 \( $WM -resize $SCALE% \) "$IMAGE" \
                         "watermarked/$IMAGE"
         done
